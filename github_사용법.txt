@@ -57,15 +57,65 @@ git remote remove origin
 
 =======깃허브에서 파일 가져오기========
 
-$ git fetch : github 에서 local repository 로 가져오기
+$ git fetch : github 에서 local repository 로 가져오기. github 원격 저장소에 변경된 내용을 내 로컬 저장소로 다운로드하는 것.
 $ git merge : github 와 local repository 완전히 동일시
-$ git pull : fetch+merge  동시에 사용. 남이 작성한 코드를 업데이트해서 가져오기.
-
-$ git push : 기록된 코드를 네트워크에 있는 서버에 올리기
+$ git pull : fetch+merge  동시에 사용. 남이 작성한 코드를 업데이트해서 가져오기. 자동으로 원격 저장소의 파일을 내려받고 이상이 없는 경우 merge까지 자동으로 합니다.
 
 fork : 프로젝트의 변경 권한이 없을 때 내 계정으로 프로젝트 복사본을 만들어 변경하는 것.
 star : 즐겨찾기 기능. 마음에 드는 소스코드 저장소를 나중에 확인.
 
+=== eclipse : 깃허브에서 파일 가져오기========
+https://blog.naver.com/heaves1/221623318893
+
+project - team - share project
+
+window - show view - other 
+- git staging : 추가된 뷰를 드래그하여 [Server] 뷰의 옆에 추가합니다.
+프로젝트 폴더를 클릭하고 기다리면 [Unstaged Changes]목록에 추가되어 아직 스테이지영역에도 넘어가지 못한 것을 확인할 수 있습니다.
+
+작업 공간 -> 스테이지 영역 -> 로컬 저장소 -> 원격 저장소
+
+* commit
+은 내 로컬저장소에 작업한 파일을 저장하는 작업을 의미합니다.
+우선 Untracked 상태인 파일들을 stage 영역으로 보내야 합니다. 그래야 commit을 하여 원격 저장소로 보낼 수 있습니다. Unstaged Change 영역에 있는 모든 파일을 선택하고 오른쪽 버튼을 눌러 [Add to Git Index]를 선택합니다.
+
+모든 파일이 stage 영역으로 넘어가고 프로젝트의 아이콘은 staged 상태가 된 것을 확인할 수 있습니다. stage 영역에 있는 아이콘은 added 상태로 이제 아직 git으로 올라가지는 않았지만 commit 할 수 있는 상태라는 의미입니다.
+
+stage 영역에 있는 파일을 로컬 영역으로 commit 시키기 위해 commit messge를 입력하고 commit 버튼을 누릅니다. stage 영역에 있는 파일이 없어지고 아이콘은 모두 변경됩니다.
+
+* remote 설정
+- git repositories 추가
+추가된 뷰를 [Git Staging] 뷰 옆에 보이도록 드래그해서 조절합니다. 이 뷰는 로컬 저장소에 저장된 프로젝트를 github의 원격 저장소에 저장하는 작업을 편하게 할 수 있도록 지원되는 뷰입니다.
+
+로컬 저장소가 보이며 이 저장소의 확장 버튼을 눌러 다음과 같이 구조가 보이도록 설정합니다. 서브메뉴 항목 중 [Remote]를 선택하고 마우스 오른쪽 버튼을 눌러 [Create Remote..]를 선택합니다.
+
+[New Remote] 대화상자가 나타나면 remote name은 기본 “origin”으로 주고 [ok] 버튼을 누릅니다.
+
+다음과 같은 대화상자가 나타나면 [change] 버튼을 누릅니다. Github와 연결할 것이므로 연결할 github의 repository로 이동한 후 [Clone or download] 버튼을 누르고 copy 합니다.
+
+다음과 같이 user와 password 설정하고 [finish]한 후 save 합니다.
+[Save] 버튼을 누르고 나면 github의 원격 저장소와 연결된 "origin"이 추가된 것을 확인할 수 있습니다.
+
+* fetch
+github 원격 저장소에 변경된 내용을 내 로컬 저장소로 다운로드하는 것.
+
+pull을 하면 자동으로 원격 저장소의 파일을 내려받고 이상이 없는 경우 merge까지 자동으로 합니다. 그러나 우리는 따로 작업하기로 했기 때문에 원격지의 정보를 내려받는 작업을 먼저 할 것입니다.
+
+이미 원격지에 readme.md 파일을 작성해서 저장해 놓았기 때문에 원격지에 있는 파일을 내 로컬로 다운로드해서 동일하게 머지까지 해 놓아야 합니다.
+
+"Git Repositories" view에서 리모트의 “origin”을 선택하고 확장하면 두 개의 목록이 표시됩니다. 자세히 보시면 하나는 구름에서 아래 방향 화살표가 있고, 하나는 구름으로 위 방향 화살표가 있는 것을 볼 수 있습니다. 아이콘 참 잘 만들었죠? 구름에서 아래 방향 화살표 있는 것이 원격지에서 로컬로 다운로드하겠다는 의미겠죠? 아이콘 오른쪽 버튼을 눌러 단축메뉴를 나타낸 후 [Configure Fetch]를 선택합니다.
+
+==============
+git
+	Remotes
+		origin
+			https://github.com/imshallah/glade 
+			우클릭 Configure Fetch..
+대화상자 - [Add] adding a Refspec for Fetch		
+			Source : m (master branch)
+			next / finish
+			[Save and Fetch]
+			
 
 ====git clone===
 
@@ -94,18 +144,22 @@ Select the blue Create branch box or hit “Enter” on your keyboard.
 These changes will be made to just the README file on your [readme-edits] branch, so now this branch contains content that’s different from [main].
 
 4.Open a Pull Request
-<code>	<pull request> ... [New pull request]
+<code> ...	<pull request> ... [New pull request]
 When you open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their branch. Pull requests show diffs, or differences, of the content from both branches. The changes, additions, and subtractions are shown in green and red.
 
 In the Example Comparisons box, select the branch you made, readme-edits, to compare with main (the original).
 
 Look over your changes in the diffs on the Compare page, make sure they’re what you want to submit.
 
-When you’re satisfied that these are the changes you want to submit, click the big green [Create Pull Request] button.
+When you’re satisfied that these are the changes you want to submit, click the big green 
+
+[Create Pull Request] button.
 
 
 5.Merge Pull Request
+In this final step, it’s time to bring your changes together – merging your readme-edits branch into the main branch.
 [Merge Pull Request]
+Click [Confirm merge]
 [Delete branch]
 
 ===GitHub Pages _ 깃허브로 호스팅하기====
