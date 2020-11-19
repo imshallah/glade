@@ -27,8 +27,8 @@ $ git --version
 
 github 저장소에 파일을 추가하려면 내가 누구인지 알려줘야 한다. 아니면 에러뜨면서 시스템이 너 누구야?하고 물어본다. 
 그걸 알려주는 코드가 이거.
-git config --global user.email {email}
-git config --global user.nam {name}
+git config --global user.email "nomado@nate.com"
+git config --global user.name "imshallah"
 
 =========깃허브에 파일 등록하기========
 
@@ -41,6 +41,7 @@ $ git commit -m "frist commit" : commit 등록 (stage에 있는 파일이 local 
 
 $ git push origin master : github 에 파일, 커밋 추가. 커밋한 파일이 git hub(remote repository)에 실제로 등록.
 
+$ git log : commit 시킨 기록(시간과 아까 기록한 내용)을 확인할 수 있다.
 
 * 계속 rejected 에러가 걸릴 때는,
 ! [rejected] master -> master (fetch first)
