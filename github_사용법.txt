@@ -41,12 +41,12 @@ git config --global user.name "imshallah"
 =========깃허브에 파일 등록하기========
 
 $ git status : staged 파일 목록 확인
-$ git add ./-A : 폴더의 모든 파일 추가
+$ git add . (/-A) : 폴더의 모든 파일 추가
 $ git add {파일 이름} : stage 에 파일 등록(스테이징) 굳이 개별 파일 지정하지 말고 전체로 하면 변경된 사항 status 로 먼저 확인하고 add . 후 다시 status 로 확인하고 commit & push
 $ git status : staged 파일 목록 확인
 $ git --reset : add 한 파일 취소
 
-$ git commit -m "frist commit" : commit 등록 (stage에 있는 파일이 local repository에 저장됨). 최대한 영어로 하는 것이 버그가 안난다.
+$ git commit -m "commit 문장" : commit 등록 (stage에 있는 파일이 local repository에 저장됨). 최대한 영어로 하는 것이 버그가 안난다.
 
 $ git push origin master : github 에 파일, 커밋 추가. 커밋한 파일이 git hub(remote repository)에 실제로 등록.
 
