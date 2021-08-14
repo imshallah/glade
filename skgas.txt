@@ -1,10 +1,17 @@
 
 
-출입문:2017#
+출입문:0420*(2017#)
 
 * 인증서/메일
 toktok.sk.com
-sb_isw@partner.sk.com
+isw.g2@partner.sk.com
+
+* git 계정
+sb_swlim/sb_swlim!
 
 * g box
 탐색기
+
+* git
+
+Gong#63830

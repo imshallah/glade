@@ -5,14 +5,16 @@
 
 * Git을 사용하려면 다운받아야함. 구글링하면 바로 나오는 공식페이지.
 https://git-scm.com/
+다운받거나 바로 실행해서 설치하면 설치 화면 순서대로.
+
 (윈도우용 git bash, mac은 그냥 하면 됨, 기타 IDE의 터미널에서 가능)
 
-local repository : 내 컴 과 연동.
+local repository : 내 컴 과 연동.(D:\github)
 remote repository : github 주소. 원격저장소.
 
 ===시작====
 
-​$ cd local repository
+​$ cd local repository (D:\github)
 $ git init : 이제 시작이다. git을 만들어줌
 4. git remote add origin https://github.com/imshallah/glade.git(깃허브 레퍼지토리 주소)(레퍼지토리를 하나 생성하고 주소 복사해서 붙여넣기 하면 됨)
 $ git branch -M master/main
@@ -21,6 +23,12 @@ $ git branch -M master/main
 5. git push -u origin master/main (브런치 이름, 굳이 master가 아닌 브런치일 때는 이름을 바꿔줘야 함)
 - 여기서 git 이 안올라가고 오류가 난다 싶으면, 4번과 5번 사이에
 git pull origin master --allow-unrelated-histories 해줘야함.
+
+git 에서 https repository 연결시 SSL 인증서 오류 해결법
+신뢰할 수 있는 사이트라면 아래 명령어로 SSL 인증서 검증을 끄는 게 가장 간편
+
+git config --global http.sslVerify false
+
 =============
 
 $ git --version
